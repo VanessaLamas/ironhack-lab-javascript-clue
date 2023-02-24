@@ -56,6 +56,6 @@ function pickMystery() {
 return oneCardPerPlayer;
 }
 // ITERATION 3
-function revealMystery() {
-    return `${firstName} ${lastName} killed Mr. Boddy using the ${weaponsArray.name} in the ${roomsArray.name}!`;
+function revealMystery(pickMystery) {
+    return (`${pickMystery.suspect.firstName} ${pickMystery.suspect.lastName} killed Mr. Boddy using the ${pickMystery.weapon.name} in the ${pickMystery.room.name}!`);
 }
