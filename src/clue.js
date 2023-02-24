@@ -38,24 +38,22 @@ const weaponsArray = [
     { name: 'trophy', weight: 25 },
     { name: 'pistol', weight: 20 },
 ];
-// ITERATION 2
+// ITERATION 2: players shuffle the cards and select a card "randomly".
 let cardsPack = 0;
 function selectRandom(cardsPack) {
     let random = Math.floor(Math.random() * cardsPack.length);
-    if (!cardsPack.length) {
-        return undefined;
-    }
     return cardsPack[random];
 }
+// ITERATION 2.1: 3 cards and selected "randomly".
 function pickMystery() {
-    let oneCardPerPlayer = {
+    let oneCardPerType = {
         suspect: selectRandom(suspectsArray),
         weapon: selectRandom(weaponsArray),
         room: selectRandom(roomsArray),
 };
-return oneCardPerPlayer;
+return oneCardPerType;
 }
-// ITERATION 3
+// ITERATION 3: revealing message.
 function revealMystery(pickMystery) {
     return (`${pickMystery.suspect.firstName} ${pickMystery.suspect.lastName} killed Mr. Boddy using the ${pickMystery.weapon.name} in the ${pickMystery.room.name}!`);
 }
